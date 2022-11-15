@@ -10,8 +10,16 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
+import { Link } from 'react-router-dom';
 
-const pages = ['Homepage', 'Contact us'];
+const pages = [{
+    name: 'Homepage',
+    route: '/',
+},
+{
+    name: 'Contact us',
+    route: '/slowmad/contact-us'
+}];
 
 function ResponsiveAppBar({ classes }) {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -52,7 +60,7 @@ function ResponsiveAppBar({ classes }) {
                             textDecoration: 'none',
                         }}
                     >
-                        LOGO
+                        <Link to='/'>Slowmad Families</Link>
                     </Typography>
 
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -84,9 +92,11 @@ function ResponsiveAppBar({ classes }) {
                                 display: { xs: 'block', md: 'none' },
                             }}
                         >
-                            {pages.map((page) => (
-                                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                    <Typography textAlign="center">{page}</Typography>
+                            {pages.map(page => (
+                                <MenuItem key={page.name} onClick={handleCloseNavMenu}>
+                                    <Typography textAlign="center">
+                                        <Link to={page.route}>{page.name}</Link>
+                                    </Typography>
                                 </MenuItem>
                             ))}
                         </Menu>
@@ -108,7 +118,7 @@ function ResponsiveAppBar({ classes }) {
                             textDecoration: 'none',
                         }}
                     >
-                        LOGO
+                        <Link to='/'>Slowmad Families</Link>
                     </Typography>
                     <Box sx={{
                         flexGrow: 1,
@@ -124,7 +134,7 @@ function ResponsiveAppBar({ classes }) {
                                 onClick={handleCloseNavMenu}
                                 sx={{ my: 2, color: 'white', display: 'block' }}
                             >
-                                {page}
+                                <Link to={page.route}>{page.name}</Link>
                             </Button>
                         ))}
                     </Box>
