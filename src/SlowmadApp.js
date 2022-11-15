@@ -1,17 +1,14 @@
-import ResponsiveAppBar from './Navbar';
-
-const bigSeven = ['sleep', 'nutrition', 'exercise', 'community', 'sunlight', 'nature', 'purpose']
+import HomeTabs from './HomeTabs';
+import seedValues from './seedValues';
+import './SlowmadApp.css'
 
 function SlowmadApp() {
     return (
-        <div>
-            <ResponsiveAppBar />
-            <h1>Slowmad Families</h1>
-            <span>School based on the big 7 in life</span>
-            <div>
-                {bigSeven.map(item => (
-                    <p>{item}</p>
-                ))}
+        <div className='container'>
+            <h1 className='app-title'>Slowmad Families</h1>
+            <span className='app-description'>School based on the big 7 in life</span>
+            <div className='items-container'>
+                <HomeTabs seedValues={seedValues} />
             </div>
         </div>
     )
