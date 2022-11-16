@@ -4,6 +4,7 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
+import './HomeTabs.css';
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -47,9 +48,9 @@ export default function HomeTabs({ seedValues }) {
     return (
         <Box sx={{ width: '100%' }}>
             <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-                <Tabs value={value} onChange={handleChange} aria-label="basic tabs">
+                <Tabs value={value} onChange={handleChange} aria-label='basic tabs'>
                     {seedValues.map((item, i) => {
-                        return <Tab label={item.itemName} {...a11yProps(i)} />;
+                        return <Tab sx={{ color: '#fff', fontWeight: 'bold' }} label={item.itemName} {...a11yProps(i)} />;
                     })}
                 </Tabs>
             </Box>

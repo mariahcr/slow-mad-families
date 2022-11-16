@@ -41,15 +41,15 @@ function ResponsiveAppBar({ classes }) {
     };
 
     return (
-        <AppBar position="static">
-            <Container maxWidth="xl">
+        <AppBar position="static" sx={{ backgroundColor: 'transparent', color: 'black', boxShadow: 'none' }}>
+            <Container maxWidth='xl'>
                 <Toolbar disableGutters>
                     <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
                     <Typography
-                        variant="h6"
+                        variant='h6'
                         noWrap
-                        component="a"
-                        href="/"
+                        component='a'
+                        href='/'
                         sx={{
                             mr: 2,
                             display: { xs: 'none', md: 'flex' },
@@ -60,15 +60,15 @@ function ResponsiveAppBar({ classes }) {
                             textDecoration: 'none',
                         }}
                     >
-                        <Link to='/'>Slowmad Families</Link>
+                        <Link style={{ color: '#fff' }} to='/'>Slowmad Families</Link>
                     </Typography>
 
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
                         <IconButton
-                            size="large"
-                            aria-label="account of current user"
-                            aria-controls="menu-appbar"
-                            aria-haspopup="true"
+                            size='large'
+                            aria-label='account of current user'
+                            aria-controls='menu-appbar'
+                            aria-haspopup='true'
                             onClick={handleOpenNavMenu}
                             color="inherit"
                         >
@@ -134,7 +134,7 @@ function ResponsiveAppBar({ classes }) {
                                 onClick={handleCloseNavMenu}
                                 sx={{ my: 2, color: 'white', display: 'block' }}
                             >
-                                <Link to={page.route}>{page.name}</Link>
+                                <Link style={{ color: '#fff' }} to={page.route}>{page.name}</Link>
                             </Button>
                         ))}
                     </Box>

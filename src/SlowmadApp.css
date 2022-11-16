@@ -1,10 +1,13 @@
 .container {
     padding-top: 10rem;
+    color: #fff;
 }
 
 .app-title {
     text-align: center;
-    margin-top: 10%;
+    margin-top: 5%;
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
 }
 
 .items-container,
@@ -16,4 +19,8 @@
 .app-description {
     margin: 1rem;
     margin-bottom: 5rem;
+    font-style: italic;
+    font-weight: 800;
+    color: antiquewhite;
+    font-size: larger;
 }
