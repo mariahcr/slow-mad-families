@@ -11,6 +11,8 @@ import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import { Link } from 'react-router-dom';
+import { useLocation } from "react-router-dom";
+import './Navbar.css'
 
 const pages = [{
     name: 'Homepage',
@@ -40,11 +42,24 @@ function ResponsiveAppBar({ classes }) {
         setAnchorElUser(null);
     };
 
+    const location = useLocation();
+    const { pathname } = location;
+    const splitLocation = pathname.split("/");
+
     return (
-        <AppBar position="static" sx={{ backgroundColor: 'transparent', color: 'black', boxShadow: 'none' }}>
+        <AppBar position="static" sx={{
+            position: "absolute",
+            width: "100%",
+            padding: "50px",
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            backgroundColor: "transparent",
+            boxShadow: "none"
+        }}>
             <Container maxWidth='xl'>
                 <Toolbar disableGutters>
-                    <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+                    {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
                     <Typography
                         variant='h6'
                         noWrap
@@ -53,16 +68,11 @@ function ResponsiveAppBar({ classes }) {
                         sx={{
                             mr: 2,
                             display: { xs: 'none', md: 'flex' },
-                            fontFamily: 'monospace',
-                            fontWeight: 700,
-                            letterSpacing: '.3rem',
-                            color: 'inherit',
-                            textDecoration: 'none',
+                            textDecoration: 'none'
                         }}
                     >
-                        <Link style={{ color: '#fff' }} to='/'>Slowmad Families</Link>
+                        <Link className='logo' to='/'>Slowmad Families</Link>
                     </Typography>
-
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
                         <IconButton
                             size='large'
@@ -95,13 +105,13 @@ function ResponsiveAppBar({ classes }) {
                             {pages.map(page => (
                                 <MenuItem key={page.name} onClick={handleCloseNavMenu}>
                                     <Typography textAlign="center">
-                                        <Link to={page.route}>{page.name}</Link>
+                                        <Link style={{ color: 'burlywood' }} to={page.route}>{page.name}</Link>
                                     </Typography>
                                 </MenuItem>
                             ))}
                         </Menu>
                     </Box>
-                    <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+                    {/* <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} /> */}
                     <Typography
                         variant="h5"
                         noWrap
@@ -111,14 +121,10 @@ function ResponsiveAppBar({ classes }) {
                             mr: 2,
                             display: { xs: 'flex', md: 'none' },
                             flexGrow: 1,
-                            fontFamily: 'monospace',
-                            fontWeight: 700,
-                            letterSpacing: '.3rem',
-                            color: 'inherit',
-                            textDecoration: 'none',
+                            textDecoration: 'none'
                         }}
                     >
-                        <Link to='/'>Slowmad Families</Link>
+                        <Link className='logo' to='/'>Slowmad Families</Link>
                     </Typography>
                     <Box sx={{
                         flexGrow: 1,
@@ -128,19 +134,12 @@ function ResponsiveAppBar({ classes }) {
                             justifyContent: "flex-end",
                         }
                     }}>
-                        {pages.map((page) => (
-                            <Button
-                                key={page}
-                                onClick={handleCloseNavMenu}
-                                sx={{ my: 2, color: 'white', display: 'block' }}
-                            >
-                                <Link style={{ color: '#fff' }} to={page.route}>{page.name}</Link>
-                            </Button>
-                        ))}
+                        <Link className={splitLocation[1] === "" ? "active" : "navbar-links"} to='/'>Homepage</Link>
+                        <Link className={splitLocation[1] === "slowmad" ? "active" : "navbar-links"} to='/slowmad/contact-us'>Contact us</Link>
                     </Box>
                 </Toolbar>
             </Container>
-        </AppBar>
+        </AppBar >
     );
 }
 export default (ResponsiveAppBar);

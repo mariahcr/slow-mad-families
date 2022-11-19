@@ -1,5 +1,4 @@
 import ResponsiveAppBar from './Navbar';
-import SlowmadAppFooter from './SlowmadAppFooter';
 import "./Page.css";
 
 function Page({ children }) {
@@ -7,7 +6,6 @@ function Page({ children }) {
         <section className="page">
             <ResponsiveAppBar />
             {children}
-            <SlowmadAppFooter />
         </section>
     )
 }

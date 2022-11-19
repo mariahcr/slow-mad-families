@@ -1,7 +1,15 @@
-.MuiTabs-flexContainer {
-    justify-content: center;
-}
-
 .css-ahj2mt-MuiTypography-root {
     text-align: center;
+}
+
+.css-16qlelm-MuiButtonBase-root-MuiTab-root.Mui-selected {
+    color: burlywood !important;
+}
+
+.css-1aquho2-MuiTabs-indicator {
+    background-color: burlywood !important;
+}
+
+.css-10d9dml-MuiTabs-indicator {
+    background-color: burlywood !important;
 }
