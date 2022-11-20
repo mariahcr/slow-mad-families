@@ -103,6 +103,14 @@ export default function HomeTabs({ seedValues }) {
                         aria-label='basic tabs'
                         centered
                     >
+                        {seedValues.map((item, i) => {
+                            return <Tab sx={{
+                                color: '#fff',
+                                fontWeight: 'bold',
+                                fontSize: "16px"
+                            }}
+                                label={item.itemName} {...a11yProps(i)} />;
+                        })}
                     </Tabs>
                     {
                         seedValues.map((item, i) => {
