@@ -1,12 +1,44 @@
 import * as React from 'react';
+import './HomeTabs.css'
+import { styled } from '@mui/material/styles';
 import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import { useMediaQuery } from '@mui/material'
-import './HomeTabs.css';
 
+const StyledTabs = styled((props) => (
+    <Tabs
+        {...props}
+        TabIndicatorProps={{ children: <span className="MuiTabs-indicatorSpan" /> }}
+    />
+))({
+    '& .MuiTabs-indicator': {
+        display: 'flex',
+        justifyContent: 'center',
+        backgroundColor: 'transparent',
+    },
+    '& .MuiTabs-indicatorSpan': {
+        maxWidth: 40,
+        width: '100%',
+        backgroundColor: 'burlywood',
+    },
+});
+
+const StyledTab = styled((props) => <Tab disableRipple {...props} />)(
+    ({ theme }) => ({
+        fontSize: "16px",
+        marginRight: theme.spacing(1),
+        color: '#fff',
+        '&.Mui-selected': {
+            color: 'burlywood',
+        },
+        '&.Mui-focusVisible': {
+            color: 'burlywood',
+        },
+    }),
+);
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
     return (
@@ -61,7 +93,7 @@ export default function HomeTabs({ seedValues }) {
                             alignItems: "center",
                         }}
                     >
-                        <Tabs
+                        <StyledTabs
                             orientation="vertical"
                             variant="scrollable"
                             value={value}
@@ -73,19 +105,16 @@ export default function HomeTabs({ seedValues }) {
                             }}
                         >
                             {seedValues.map((item, i) => {
-                                return <Tab sx={{
-                                    color: '#fff',
-                                    fontWeight: 'bold',
-                                    fontSize: "16px"
-                                }}
+                                return <StyledTab
                                     label={item.itemName} {...a11yProps(i)} />;
                             })}
-                        </Tabs>
+                        </StyledTabs>
                         {
                             seedValues.map((item, i) => {
                                 return <TabPanel
                                     value={value}
-                                    index={i}>
+                                    index={i}
+                                    className='item-description'>
                                     {item.description}
                                 </TabPanel>
                             })
@@ -97,26 +126,23 @@ export default function HomeTabs({ seedValues }) {
                     borderBottom: 1,
                     borderColor: 'divider'
                 }}>
-                    <Tabs
+                    <StyledTabs
                         value={value}
                         onChange={handleChange}
                         aria-label='basic tabs'
                         centered
                     >
                         {seedValues.map((item, i) => {
-                            return <Tab sx={{
-                                color: '#fff',
-                                fontWeight: 'bold',
-                                fontSize: "16px"
-                            }}
+                            return <StyledTab
                                 label={item.itemName} {...a11yProps(i)} />;
                         })}
-                    </Tabs>
+                    </StyledTabs>
                     {
                         seedValues.map((item, i) => {
                             return <TabPanel
                                 value={value}
-                                index={i}>
+                                index={i}
+                                className='MuiBox-root'>
                                 {item.description}
                             </TabPanel>
                         })
