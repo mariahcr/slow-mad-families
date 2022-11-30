@@ -3,11 +3,19 @@
 .container {
     padding-top: 10rem;
     color: #fff;
+    overflow: scroll;
+    height: 100vh;
 }
 
 .app-title {
     text-align: center;
     margin-top: 9%;
+    font-size: 3.5rem;
+}
+
+.small-app-title {
+    text-align: center;
+    margin-top: 5px;
     font-size: 3.5rem;
 }
 
@@ -18,7 +26,7 @@
 }
 
 .app-description {
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
     font-style: italic;
     color: burlywood;
     font-size: 1.5rem;

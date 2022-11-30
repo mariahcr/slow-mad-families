@@ -7,23 +7,18 @@ import {
 } from "react-router-dom";
 import SlowmadApp from "./SlowmadApp";
 import ContactPage from "./ContactPage";
-import Page from "./Page";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: (
-      <Page>
-        <SlowmadApp />
-      </Page>
+      <SlowmadApp />
     )
   },
   {
     path: "slowmad/contact-us",
     element: (
-      <Page>
-        <ContactPage />
-      </Page>
+      <ContactPage />
     )
   },
 ]);

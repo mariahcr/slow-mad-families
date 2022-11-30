@@ -5,6 +5,7 @@
     color: burlywood;
     text-decoration: none;
     font-family: 'Poppins', sans-serif;
+    text-align: center;
 }
 
 .navbar-links {
@@ -12,10 +13,6 @@
     margin: 0 25px;
     display: flex;
     text-decoration: none;
-}
-
-.responsive-nav-links {
-    color: 'red' !important;
 }
 
 .active {
