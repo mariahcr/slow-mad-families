@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/slow-mad-families/static/css/main.53ccfc63.css",
-    "main.js": "/slow-mad-families/static/js/main.6e4449e7.js",
+    "main.js": "/slow-mad-families/static/js/main.36ba4f18.js",
     "static/js/787.9a8f3612.chunk.js": "/slow-mad-families/static/js/787.9a8f3612.chunk.js",
     "static/media/slowmadAppBackground.png": "/slow-mad-families/static/media/slowmadAppBackground.9f3cc5127bebd7f152f3.png",
     "index.html": "/slow-mad-families/index.html",
     "main.53ccfc63.css.map": "/slow-mad-families/static/css/main.53ccfc63.css.map",
-    "main.6e4449e7.js.map": "/slow-mad-families/static/js/main.6e4449e7.js.map",
+    "main.36ba4f18.js.map": "/slow-mad-families/static/js/main.36ba4f18.js.map",
     "787.9a8f3612.chunk.js.map": "/slow-mad-families/static/js/787.9a8f3612.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.53ccfc63.css",
-    "static/js/main.6e4449e7.js"
+    "static/js/main.36ba4f18.js"
   ]
 }
